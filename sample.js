@@ -5,7 +5,7 @@ import { $, queue } from "@dekproject/scope";
 Queue();
 
 $.wait(["queue"]).then(async () => {
-    queue.subscribe("test").setTimeout(2000);
+    queue.subscribe("test").setTimeout(300);
     queue.subscribe("test").setParser((data, count) => {
         console.log(data, count);
     });

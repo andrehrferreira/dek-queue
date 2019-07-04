@@ -13,7 +13,7 @@ class Queue {
     }
 
     setTimeout(timer){
-        if(typeof timer == "Number")
+        if(typeof timer == "number")
             this.timeout = timer;
     }
 
