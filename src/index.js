@@ -5,6 +5,7 @@ class Queue {
         this.name = name;
         this.timeout = 1000;
         this.timer = null;
+        this.block = 1;
         this.queue = [];
     }
 
@@ -17,12 +18,28 @@ class Queue {
             this.timeout = timer;
     }
 
+    setBlock(block){
+        if(typeof block == "number")
+            this.block = block;
+    }
+
     setParser(cb){
-        this.timer = setInterval(() => {
+        this.timer = setInterval(async () => {
             if(this.queue.length > 0){
-                let data = this.queue[0];
-                this.queue.shift();
-                cb(data, this.queue.length);
+                let data = [];
+
+                for(let key = 0; key < this.block; key++){
+                    if(this.queue.length > 0){
+                        data.push(this.queue[0]);
+                        this.queue.shift();
+                    }
+                    else{
+                        break;
+                    }
+                }
+
+                if(data.length > 0)
+                    cb(data, this.queue.length, new Date().getTime());
             }
         }, this.timeout);
     }
