@@ -30,7 +30,7 @@ var Queue = function () {
     }, {
         key: "setTimeout",
         value: function setTimeout(timer) {
-            if (typeof timer == "Number") this.timeout = timer;
+            if (typeof timer == "number") this.timeout = timer;
         }
     }, {
         key: "setParser",
