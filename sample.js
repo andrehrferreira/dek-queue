@@ -21,4 +21,7 @@ $.wait(["queue"]).then(async () => {
     setInterval(() => {
         queue.subscribe("test").push({ timeout: new Date().getTime() });
     }, 300);
+}).catch((e) => {
+    console.log("The wait timeout was reached without loading the dependencies");
+    process.exit(-1);
 });
