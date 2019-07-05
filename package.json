@@ -15,9 +15,7 @@
     "homepage": "https://github.com/dekproject/queue#readme",
     "scripts": {
         "sample": "babel-node sample.js --presets env",
-        "build": "babel src -s -D -d build --presets env",
-        "dev": "babel-node src --presets env",
-        "start": "node build"
+        "build": "babel src -s -D -d build --presets env"
     },
     "dependencies": {
         "@babel/polyfill": "^7.4.4",
