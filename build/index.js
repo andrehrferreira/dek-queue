@@ -23,7 +23,7 @@ var Queue = function () {
         this.timer = null;
         this.block = 1;
         this.queue = [];
-        this.parsePromise = false;
+        this.promise = false;
     }
 
     _createClass(Queue, [{
@@ -34,22 +34,22 @@ var Queue = function () {
         }
     }, {
         key: "setTimeout",
-        value: function setTimeout(timer) {
-            if (typeof timer == "number") this.timeout = timer;
+        value: function setTimeout(v) {
+            if (typeof v == "number") this.timeout = v;
 
             return this;
         }
     }, {
         key: "setBlock",
-        value: function setBlock(block) {
-            if (typeof block == "number") this.block = block;
+        value: function setBlock(v) {
+            if (typeof v == "number") this.block = v;
 
             return this;
         }
     }, {
-        key: "parserReturnPromise",
-        value: function parserReturnPromise(returnPromise) {
-            if (typeof returnPromise == "boolean") this.parsePromise = returnPromise;
+        key: "returnPromise",
+        value: function returnPromise(v) {
+            if (typeof v == "boolean") this.promise = v;
 
             return this;
         }
@@ -64,7 +64,7 @@ var Queue = function () {
                     while (1) {
                         switch (_context2.prev = _context2.next) {
                             case 0:
-                                if (!this.parsePromise) {
+                                if (!this.promise) {
                                     _context2.next = 25;
                                     break;
                                 }

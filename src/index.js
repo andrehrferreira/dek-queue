@@ -7,7 +7,7 @@ class Queue {
         this.timer = null;
         this.block = 1;
         this.queue = [];
-        this.parsePromise = false;
+        this.promise = false;
     }
 
     push(data){
@@ -15,29 +15,29 @@ class Queue {
         return this;
     }
 
-    setTimeout(timer){
-        if(typeof timer == "number")
-            this.timeout = timer;
+    setTimeout(v){
+        if(typeof v == "number")
+            this.timeout = v;
 
         return this;
     }
 
-    setBlock(block){
-        if(typeof block == "number")
-            this.block = block;
+    setBlock(v){
+        if(typeof v == "number")
+            this.block = v;
 
         return this;
     }
 
-    parserReturnPromise(returnPromise){
-        if(typeof returnPromise == "boolean")
-            this.parsePromise = returnPromise;
+    returnPromise(v){
+        if(typeof v == "boolean")
+            this.promise = v;
 
         return this;
     }
 
     async setParser(cb){
-        if(this.parsePromise){
+        if(this.promise){
             try{
                 if(this.queue.length > 0){
                     let data = [];

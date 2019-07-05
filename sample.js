@@ -1,5 +1,5 @@
 import '@babel/polyfill/noConflict';
-import Queue from "./src/index";
+import Queue from "./build/index";
 import { $, queue } from "@dekproject/scope";
 
 Queue();
@@ -16,7 +16,7 @@ $.wait(["queue"]).then(async () => {
     });*/
 
     //Promise queue
-    queue.subscribe("test").parserReturnPromise(true).setTimeout(1000).setBlock(100).setParser((data, count, blockID) => {
+    queue.subscribe("test").returnPromise(true).setTimeout(1000).setBlock(100).setParser((data, count, blockID) => {
         return new Promise((resolve, reject) => {
             console.log({
                 block: blockID,
