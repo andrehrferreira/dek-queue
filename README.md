@@ -42,8 +42,6 @@ $.wait(["queue"]).then(async () => {
             length: data.length,
             data: data
         });
-
-        //data.map((item) => console.log("data:", item));
     });
 
     setInterval(() => {
