@@ -1,6 +1,6 @@
 {
     "name": "@dekproject/queue",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "description": "Queue manager for DEK",
     "author": "Andre Ferreira",
     "license": "MIT",
@@ -14,7 +14,7 @@
     },
     "homepage": "https://github.com/dekproject/queue#readme",
     "scripts": {
-        "sample": "babel-node sample.js --presets env",
+        "dev": "npm run build && babel-node sample.js --presets env",
         "build": "babel src -s -D -d build --presets env"
     },
     "dependencies": {

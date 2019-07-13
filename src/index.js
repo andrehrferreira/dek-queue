@@ -100,6 +100,4 @@ class Queues{
     }
 }
 
-export default () => {
-    $.set("queue", new Queues());
-}
+$.set("queue", new Queues());

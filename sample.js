@@ -1,8 +1,8 @@
 import '@babel/polyfill/noConflict';
 import Queue from "./build/index";
-import { $, queue } from "@dekproject/scope";
+import { $, plugins, queue } from "@dekproject/scope";
 
-Queue();
+plugins("");
 
 $.wait(["queue"]).then(async () => {
 
